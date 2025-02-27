@@ -33,6 +33,7 @@ while salario_valido is not True:
         salario = float(input("Insira o valor do seu salário: "))
         if salario <= 0:
             print("Insira um valor válido.")
+        else:
             salario_valido = True
     except ValueError:
         print("Por favor, digite apenas números!")
@@ -44,6 +45,8 @@ while bonus_valido is not True:
         bonus = float(input("Insira o valor do seu bônus: "))
         if bonus < 0:
             print("Por favor, digite um valor positivo para o bônus.")
+        else:
+            bonus_valido = True
     except ValueError:
         print("Entrada inválida para o bônus. Por favor, digite um número válido.")
 
