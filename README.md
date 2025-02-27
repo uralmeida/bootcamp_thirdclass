@@ -55,6 +55,10 @@ Python suporta vários tipos de dados simples, tais como:
 # DEBUG, IF, FOR, While, Listas e Dicionários em Python
 
 ## Estruturas de Controle de Fluxo
+Exploraremos como utilizar `if` para tomar decisões baseadas em condições, `for` para iterar sobre sequências de dados, e `while` para executar blocos de código enquanto uma condição for verdadeira.
+
+Para saber mais:
+[Doc](https://docs.python.org/pt-br/3/tutorial/controlflow.html)
 
 O if é uma estrutura condicional fundamental em Python que avalia se uma condição é verdadeira (True) e, se for, executa um bloco de código. Se a condição inicial não for verdadeira, você pode usar elif (else if) para verificar condições adicionais, e else para executar um bloco de código quando nenhuma das condições anteriores for verdadeira.
 
