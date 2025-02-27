@@ -120,10 +120,91 @@ a = ['Mary', 'had', 'a', 'little', 'lamb']
 for i in range(len(a)):
     print(i, a[i])
 ```
+### Exercícios com WHILE
+
+O loop while é uma estrutura de controle de fluxo fundamental em Python, permitindo executar um bloco de código repetidamente enquanto uma condição especificada é avaliada como verdadeira (True). Na engenharia de dados, o uso do while pode ser extremamente útil para diversas tarefas, como monitoramento contínuo de fontes de dados, execução de processos de ETL (Extract, Transform, Load) até que não haja mais dados para processar, ou mesmo para implementar tentativas de reconexão automáticas a serviços ou bancos de dados quando a primeira tentativa falha.
+
+#### Exemplo de Uso do while em Engenharia de Dados
+Um cenário comum em engenharia de dados é a necessidade de executar uma tarefa de maneira periódica, como verificar novos dados em um diretório, fazer polling de uma API para novas respostas ou monitorar mudanças em um banco de dados. Nestes casos, um loop while pode ser utilizado para manter o script rodando continuamente ou até que uma condição específica seja atingida (por exemplo, um sinal para desligar ou uma condição de erro).
+
+#### Exemplo Prático: while True com Pausa
+
+Um exemplo direto do uso de while True em Python é criar um loop infinito que executa uma ação a cada intervalo definido, como imprimir uma mensagem a cada 10 segundos. Isso pode ser útil para monitorar processos ou dados em tempo real com uma verificação periódica.
+
+```python
+import time
+
+while True:
+    print("Verificando novos dados...")
+    # Aqui você pode adicionar o código para verificar novos dados,
+    # por exemplo, checar a existência de novos arquivos em um diretório,
+    # fazer uma consulta a um banco de dados ou API, etc.
+    
+    time.sleep(10)  # Pausa o loop por 10 segundos
+```
+Neste exemplo, o while True cria um loop infinito, que é uma maneira poderosa de manter um script rodando continuamente. O print simula a ação de verificar novos dados, e o time.sleep(10) pausa a execução do loop por 10 segundos antes da próxima iteração. Essa abordagem é simples, mas eficaz para muitos cenários de monitoramento e polling em engenharia de dados, permitindo que o script execute uma verificação ou tarefa de maneira periódica.
+
+Contudo, é importante usar loops infinitos com cautela para evitar criar condições em que o script possa consumir recursos desnecessários ou tornar-se difícil de encerrar de forma controlada. Em ambientes de produção, outras abordagens como agendamento de tarefas (por exemplo, usando cron jobs em sistemas Unix) ou o uso de sistemas de enfileiramento de mensagens e triggers de banco de dados podem ser mais adequados para algumas dessas tarefas.
+
+## Estruturas de Controle de Fluxo
+
+Integre na solução anterior um fluxo de While que repita o fluxo até que o usuário insira as informações corretas
+    
+##### Solução
+```python
+# Inicializa as variáveis para o controle do loop
+nome_valido = False
+salario_valido = False
+bonus_valido = False
+
+# Loop para verificar o nome
+while not nome_valido:
+    try:
+        nome = input("Digite seu nome: ")
+        if len(nome) == 0:
+            raise ValueError("O nome não pode estar vazio.")
+        elif any(char.isdigit() for char in nome):
+            raise ValueError("O nome não deve conter números.")
+        else:
+            print("Nome válido:", nome)
+            nome_valido = True
+    except ValueError as e:
+        print(e)
+
+# Loop para verificar o salário
+while not salario_valido:
+    try:
+        salario = float(input("Digite o valor do seu salário: "))
+        if salario < 0:
+            print("Por favor, digite um valor positivo para o salário.")
+        else:
+            salario_valido = True
+    except ValueError:
+        print("Entrada inválida para o salário. Por favor, digite um número.")
+
+# Loop para verificar o bônus
+while not bonus_valido:
+    try:
+        bonus = float(input("Digite o valor do bônus recebido: "))
+        if bonus < 0:
+            print("Por favor, digite um valor positivo para o bônus.")
+        else:
+            bonus_valido = True
+    except ValueError:
+        print("Entrada inválida para o bônus. Por favor, digite um número.")
+
+bonus_recebido = 1000 + salario * bonus  # Exemplo simples de cálculo de bônus
+
+# Imprime as informações para o usuário
+print(f"{nome}, seu salário é R${salario:.2f} e seu bônus final é R${bonus_recebido:.2f}.")
+```
+
+
+
+##### Dados voltados para estudo.
 
 [Material sobre Dicionários](https://www.youtube.com/watch?v=ZWj8o692qGY)
 
-##### Dados voltados para estudo.
-[Referência do trabalho][def]
+[Material de referência do trabalho][def]
 
 [def]: https://github.com/lvgalvao/data-engineering-roadmap/tree/79cd29019b91c3a7e8774d15156d63a02881da54/Bootcamp%20-%20Python%20para%20dados
