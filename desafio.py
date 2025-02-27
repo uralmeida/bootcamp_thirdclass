@@ -19,6 +19,5 @@ while nome_valido is not True:
             raise ValueError("O nome deve conter apenas letras.")
         else:
             print("Nome válido: ", nome)
-            exit()
     except ValueError as e:
         print(e)
