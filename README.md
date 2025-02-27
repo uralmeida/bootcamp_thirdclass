@@ -1,5 +1,7 @@
 # bootcamp_thirdclass
-## Consulta
+## Consulta de dados para criação de projetos.
+#### Referência do material no final da estrutura.
+
 ## 1. Tipos primitivos
 
 Variáveis são espaços de memória designados para armazenar dados que podem ser modificados durante a execução de um programa. Em Python, a declaração de variáveis é dinâmica, o que significa que o tipo de dado é inferido durante a atribuição.
