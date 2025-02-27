@@ -4,13 +4,13 @@
 # Escreva um programa que verifique esses campos e imprima "Dados válidos" se ambos 
 # forem positivos ou "Dados inválidos" caso contrário.
 
-Quantidade = 100
-Preço = 80
+    ##Quantidade = 100
+    ##Preço = 80
 
-if Quantidade > 0 and Preço > 0:
-    print("Valores Válidos.")
-else:
-    print("Valores Inválidos.")
+    ##if Quantidade > 0 and Preço > 0:
+        ##print("Valores Válidos.")
+    ##else:
+        ##print("Valores Inválidos.")
 
 ### Exercício 2: Classificação de Dados de Sensor
 # Imagine que você está trabalhando com dados de sensores IoT. 
@@ -21,14 +21,14 @@ else:
 # - Temperatura < 18ºC é 'Baixa'
 # - Temperatura < 18ºC é 'Baixa'
 
-temperatura = float(input("Insira a temperatura: "))
+    ##emperatura = float(input("Insira a temperatura: "))
 
-if temperatura < 18:
-    print("Baixa")
-elif 18 <= temperatura <= 26:
-    print("Normal")
-else:
-    print("Alta")
+    ##if temperatura < 18:
+        ##print("Baixa")
+    ##elif 18 <= temperatura <= 26:
+        ##print("Normal")
+    ##else:
+        ##print("Alta")
 
 ### Exercício 3: Filtragem de Logs por Severidade
 # Você está analisando logs de uma aplicação e precisa filtrar mensagens 
@@ -54,13 +54,21 @@ else:
 # Objetivo:** Dado um texto, contar quantas vezes cada palavra única aparece nele.
 
 texto = "Today, i'm studing my english every afternoon"
+
 texto_modificado = texto.replace(",","")
-palavras = texto_modificado.split
+texto_modificado_2 = texto_modificado.replace("'","")
+palavras = texto_modificado_2.split()
 
 print(palavras)
 contagem_de_palavras = {}
 
+# eu quero percorrer todas as palavras dentro de palavra e checar se ela já está no meu contagem_de_palavras
 
+for palavra in palavras:
+    if palavra in contagem_de_palavras:
+        contagem_de_palavras[palavra] = +1
+    else:
+        contagem_de_palavras[palavra] = 1
 
 ### Exercício 7. Normalização de Dados
 # Objetivo:** Normalizar uma lista de números para que fiquem na escala de 0 a 1.
